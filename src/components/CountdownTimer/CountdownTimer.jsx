@@ -13,6 +13,7 @@ const CountdownTimer = ({ defaultTime = '35:00', videoId }) => {
   const [time, setTime] = useState(parseTime(defaultTime));
   const [isRunning, setIsRunning] = useState(false);
   const [activeButton, setActiveButton] = useState("button1");
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     let intervalId;
@@ -85,6 +86,14 @@ const CountdownTimer = ({ defaultTime = '35:00', videoId }) => {
     }
   };
 
+  const handleClick = () => {
+    handleReset();
+    setIsAnimating(true);
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 1000);
+  };
+
   return (
     <div className={styles["countdown-timer"]}>
       <div className={styles["countdown-states"]}>
@@ -119,8 +128,13 @@ const CountdownTimer = ({ defaultTime = '35:00', videoId }) => {
           borderColor='black'
           fontSize='1rem'
         />
-        <VscDebugRestart color='white' size={38} cursor={"pointer"} onClick={handleReset} />
-
+        <VscDebugRestart
+          color='white'
+          size={38}
+          cursor={"pointer"}
+          onClick={handleClick}
+          className={isAnimating ? styles['animated-icon'] : ""}
+        />
       </div>
       <iframe
         id="youtube-iframe"

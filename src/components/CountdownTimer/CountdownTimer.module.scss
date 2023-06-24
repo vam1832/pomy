@@ -40,3 +40,18 @@
     opacity: 0;
     pointer-events: none;
 }
+
+.animated-icon {
+    animation: spin 1s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+    transform-origin: center;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+  
