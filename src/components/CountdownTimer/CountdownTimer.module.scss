@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+
+.countdown-timer {
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    text-align: center;
+    transform: scale(1.5);
+    overflow-x: hidden;
+
+}
+
+.countdown-states {
+    display: flex;
+    gap: 8px;
+}
+
+.countdown-timer__buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.countdown-timer__time {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    margin: 12px;
+    /* Color de texto oscuro */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    /* Sombra de texto */
+}
+
+.yt-iframe {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}

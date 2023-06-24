@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+
+$countdown-button-active-background-color: #ffffff; // Color de fondo cuando el botón está activo
+$countdown-button-active-text-color: #000000; // Color de texto cuando el botón está activo
+
+.countdown_button {
+  width: var(--button-width);
+  height: var(--button-height);
+
+  color: var(--button-text-color);
+  background-color: var(--button-background-color);
+  border: .12rem solid var(--button-border-color);
+  border-radius: 40px;
+
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: var(--buton-font-size);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    color: var(--button-hover-text-color);
+    background-color: var(--button-hover-background-color);
+    border: .12rem solid var(--button-hover-border-color);
+  }
+
+  &.active {
+    color: $countdown-button-active-text-color;
+    background-color: $countdown-button-active-background-color;
+    border: .12rem solid $countdown-button-active-background-color;
+  }
+}
+
+.countdown-timer__buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
