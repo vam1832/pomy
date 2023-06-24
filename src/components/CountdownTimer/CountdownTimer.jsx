@@ -3,7 +3,7 @@ import styles from './CountdownTimer.module.scss';
 import CountdownButton from './CountdownButton/CountdownButton';
 import { VscDebugRestart } from "react-icons/vsc";
 
-const CountdownTimer = ({ defaultTime = '00:03', videoId }) => {
+const CountdownTimer = ({ defaultTime = '35:00', videoId }) => {
   const parseTime = (timeString) => {
     const [minutes, seconds] = timeString.split(':');
     return parseInt(minutes) * 60 + parseInt(seconds);
