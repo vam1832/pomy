@@ -15,7 +15,7 @@ $countdown-button-active-text-color: #000000; // Color de texto cuando el botón
   font-family: 'Space Grotesk', sans-serif;
   font-size: var(--buton-font-size);
   font-weight: bold;
-  // white-space: nowrap;
+  white-space: nowrap;
   cursor: pointer;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 
