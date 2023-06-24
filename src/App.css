@@ -1,5 +1,5 @@
 body {
-  background-image: url("https://i.pinimg.com/originals/ef/a0/e9/efa0e90f1cb807c8334c5d02b93157dd.png");
+  background-image: url("public/background-1.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -17,5 +17,11 @@ body {
       align-items: center;
       overflow-x: hidden;
       overflow-y: hidden;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  body {
+    background-size: cover;
   }
 }
