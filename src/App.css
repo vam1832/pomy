@@ -10,7 +10,12 @@ body {
   overflow-y: hidden;
 }
 
-@media (max-width: 768px) {
+html {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+@media (max-width: 600px) {
   .body {
     display: flex;
     justify-content: center;
@@ -23,7 +28,12 @@ body {
 
 }
 
-html {
-  overflow-x: hidden;
-  overflow-y: hidden;
+@media (orientation: landscape) {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
 }
