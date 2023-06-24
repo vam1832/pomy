@@ -10,6 +10,12 @@ body {
   overflow-y: hidden;
 }
 
-.countdown-timer-app{
-  transform: scale(2);
+@media (max-width: 768px) {
+  .body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      overflow-y: hidden;
+  }
 }
