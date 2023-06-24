@@ -12,16 +12,18 @@ body {
 
 @media (max-width: 768px) {
   .body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow-x: hidden;
-      overflow-y: hidden;
-  }
-}
-
-@media (max-width: 768px) and (orientation: landscape) {
-  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-position: cover;
     background-size: cover;
   }
+
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
