@@ -3,7 +3,7 @@ import styles from './CountdownTimer.module.scss';
 import CountdownButton from './CountdownButton/CountdownButton';
 import { VscDebugRestart } from "react-icons/vsc";
 
-const CountdownTimer = ({ defaultTime = '35:00', videoIdYT }) => {
+const CountdownTimer = ({ defaultTime = '00:05', videoIdYT }) => {
   const parseTime = (timeString) => {
     const [minutes, seconds] = timeString.split(':');
     return parseInt(minutes) * 60 + parseInt(seconds);
@@ -26,6 +26,7 @@ const CountdownTimer = ({ defaultTime = '35:00', videoIdYT }) => {
     } else if (time === 0) {
       stopVideoAudio();
       const notification = new Audio('src/sounds/notification_pomodoro.mp3');
+      console.log(notification)
       notification.play();
       setTime(parseTime(defaultTime));
       setIsRunning(false);
