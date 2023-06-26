@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './CountdownTimer.module.scss';
 import CountdownButton from './CountdownButton/CountdownButton';
 import { VscDebugRestart } from "react-icons/vsc";
+import notificationSound from '../../sounds/notification_pomodoro.mp3';
 
 const CountdownTimer = ({ defaultTime = '00:05', videoIdYT }) => {
   const parseTime = (timeString) => {
@@ -25,7 +26,7 @@ const CountdownTimer = ({ defaultTime = '00:05', videoIdYT }) => {
       }, 1000);
     } else if (time === 0) {
       stopVideoAudio();
-      const notification = new Audio('src/sounds/notification_pomodoro.mp3');
+      const notification = new Audio(notificationSound);
       console.log(notification)
       notification.play();
       setTime(parseTime(defaultTime));
