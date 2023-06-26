@@ -27,7 +27,6 @@ const CountdownTimer = ({ defaultTime = '35:00', videoIdYT }) => {
     } else if (time === 0) {
       stopVideoAudio();
       const notification = new Audio(notificationSound);
-      console.log(notification)
       notification.play();
       setTime(parseTime(defaultTime));
       setIsRunning(false);
