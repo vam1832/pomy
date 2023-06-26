@@ -4,7 +4,7 @@ import CountdownButton from './CountdownButton/CountdownButton';
 import { VscDebugRestart } from "react-icons/vsc";
 import notificationSound from '../../sounds/notification_pomodoro.mp3';
 
-const CountdownTimer = ({ defaultTime = '00:05', videoIdYT }) => {
+const CountdownTimer = ({ defaultTime = '35:00', videoIdYT }) => {
   const parseTime = (timeString) => {
     const [minutes, seconds] = timeString.split(':');
     return parseInt(minutes) * 60 + parseInt(seconds);
