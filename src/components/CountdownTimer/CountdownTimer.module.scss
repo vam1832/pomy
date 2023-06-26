@@ -9,6 +9,7 @@
     font-family: 'Space Grotesk', sans-serif;
     text-align: center;
     transform: scale(1.4);
+    width: 100%;
 }
 
 .countdown-states {
@@ -62,9 +63,23 @@
         display: flex;
         justify-content: start;
         align-items: center;
-        transform: scale(1);
+        transform: scale(1.1);
         overflow-x: hidden;
         overflow-y: hidden;
         height: 100%;
+        background-position: center;
+        background-position-x: right;
+    }
+}
+
+@media (max-width: 600px) and (orientation: landscape) {
+    .countdown-timer {
+        margin-top: 130px;
+        margin-top: 60px;
+        margin-bottom: 100px;
+        transform: scale(1);
+        zoom: 1.2;
+        background-position: center;
+        background-position-x: right;
     }
 }

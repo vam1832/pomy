@@ -3,7 +3,7 @@ import styles from './CountdownTimer.module.scss';
 import CountdownButton from './CountdownButton/CountdownButton';
 import { VscDebugRestart } from "react-icons/vsc";
 
-const CountdownTimer = ({ defaultTime = '35:00', videoId }) => {
+const CountdownTimer = ({ defaultTime = '00:05', videoIdYT }) => {
   const parseTime = (timeString) => {
     const [minutes, seconds] = timeString.split(':');
     return parseInt(minutes) * 60 + parseInt(seconds);
@@ -12,8 +12,9 @@ const CountdownTimer = ({ defaultTime = '35:00', videoId }) => {
   const [defaultTimeCountdown, setDefaultTimeCountdown] = useState(defaultTime)
   const [time, setTime] = useState(parseTime(defaultTime));
   const [isRunning, setIsRunning] = useState(false);
-  const [activeButton, setActiveButton] = useState("button1");
+  const [activeButton, setActiveButton] = useState("pomodoro");
   const [isAnimating, setIsAnimating] = useState(false);
+  const [videoId, setVideoId] = useState(videoIdYT)
 
   useEffect(() => {
     let intervalId;
@@ -23,8 +24,8 @@ const CountdownTimer = ({ defaultTime = '35:00', videoId }) => {
         setTime((prevTime) => prevTime - 1);
       }, 1000);
     } else if (time === 0) {
-      const notification = new Audio('src/sounds/anya_wakuwaku.mp3');
       stopVideoAudio();
+      const notification = new Audio('src/sounds/notification_pomodoro.mp3');
       notification.play();
       setTime(parseTime(defaultTime));
       setIsRunning(false);
@@ -73,16 +74,21 @@ const CountdownTimer = ({ defaultTime = '35:00', videoId }) => {
   };
 
   const handleButtonClick = (buttonId) => {
+    stopVideoAudio()
     setActiveButton(buttonId);
-    if (buttonId === "button1") {
+    handleReset();
+    if (buttonId === "pomodoro") {
       setTime(parseTime('35:00'))
       setDefaultTimeCountdown('35:00')
-    } else if (buttonId === "button2") {
+      setVideoId("H1iboKia3AQ")
+    } else if (buttonId === "short_break") {
       setTime(parseTime('10:00'))
       setDefaultTimeCountdown('10:00')
-    } else if (buttonId === "button3") {
+      setVideoId("novideo")
+    } else if (buttonId === "long_break") {
       setTime(parseTime('25:00'))
       setDefaultTimeCountdown('25:00')
+      setVideoId("novideo")
     }
   };
 
@@ -98,20 +104,20 @@ const CountdownTimer = ({ defaultTime = '35:00', videoId }) => {
     <div className={styles["countdown-timer"]}>
       <div className={styles["countdown-states"]}>
         <CountdownButton
-          isActive={activeButton === "button1"}
-          onClick={() => handleButtonClick("button1")}
+          isActive={activeButton === "pomodoro"}
+          onClick={() => handleButtonClick("pomodoro")}
           text={"pomodoro"}
           width={100}
         />
         <CountdownButton
-          isActive={activeButton === "button2"}
-          onClick={() => handleButtonClick("button2")}
+          isActive={activeButton === "short_break"}
+          onClick={() => handleButtonClick("short_break")}
           text={"short break"}
           width={100}
         />
         <CountdownButton
-          isActive={activeButton === "button3"}
-          onClick={() => handleButtonClick("button3")}
+          isActive={activeButton === "long_break"}
+          onClick={() => handleButtonClick("long_break")}
           text={"long break"}
           width={100}
         />

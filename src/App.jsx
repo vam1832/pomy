@@ -20,7 +20,7 @@ const App = () => {
 
   return (
     <div>
-      <CountdownTimer isRunning={isRunning} time={time} handleStart={handleStart} handleReset={handleReset} videoId={"H1iboKia3AQ"} />
+      <CountdownTimer isRunning={isRunning} time={time} handleStart={handleStart} handleReset={handleReset} videoIdYT={"H1iboKia3AQ"} />
     </div>
   );
 };

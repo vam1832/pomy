@@ -14,28 +14,3 @@ html {
   overflow-x: hidden;
   overflow-y: hidden;
 }
-
-@media (max-width: 600px) {
-  .body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    background-position: cover;
-    background-size: cover;
-  }
-
-}
-
-@media (orientation: landscape) {
-  html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
-    background-position: center;
-    background-size: cover;
-  }
-}
